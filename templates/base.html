@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    {% include "snippets/styles.html" %}
+    <title>{{page_name}} | {{website}}</title>
+</head>
+<body>
+    <!-- Saya pakai inline CSS karena terkadang framework Django -->
+    <!-- tidak memberikan perubahan pada tampilan -->
+    {% include "snippets/navbar.html" %}
+
+    <main style="background-color: white;">
+        {% block Main_Content %}
+        <style>
+            article {
+                background-color: crimson;
+                margin-bottom: 20px;
+                padding-bottom: 30px;
+            }
+            footer p {
+                background-color: #252525;
+                margin: 0px 0px;
+            }
+            h1 {
+                text-align: center;
+                margin-bottom: 25px;
+            }
+            h2 {
+                margin-bottom: 15px;
+            }
+            h3, p {
+                background-color: yellow;
+                margin-left: 20px;
+                margin-right: 30px;
+            }
+            main {
+                padding-bottom: 60%;
+            }
+            p {
+                margin-bottom: 25px;
+                margin-top: 10px;
+            }
+            section {
+                background-color: chartreuse;
+                margin-bottom: 30px;
+                padding-left: 8vw;
+                padding-right: 8vw;
+                text-align: justify;
+            }
+        </style>
+            <section class="top-anime">
+                <h1>Top Anime</h1>
+                {% block Popular_Anime %}
+
+                {% endblock Popular_Anime %}
+            </section>
+
+            <section class="text-information">
+
+                <h1>News Highlights</h1>
+                <article id="info_event">
+                    <h2>Incoming Event</h2>
+                    {% block Event %}
+                        <h3></h3>
+                        <p></p>
+                    {% endblock Event %}
+                </article>
+
+                <article id="info_news">
+                    <h2>Hot News</h2>
+                    {% block News %}
+                        <h3></h3>
+                        <p></p>
+                    {% endblock News %}
+                </article>
+
+                <article id="announcement">
+                    <h2>Pengumuman</h2>
+                    {% block Announcement %}
+                        <h3></h3>
+                        <p></p>
+                    {% endblock Announcement %}
+                </article>
+
+            </section>
+        {% endblock Main_Content %}
+    </main>
+
+    {% include "snippets/footer.html" %}
+
+    {% include "snippets/scripts.html" %}
+
+    {% block app_script %}
+    <script src="{% static 'vendor/bootstrap/bootstrap.js' %}"></script>
+    {% endblock app_script %}
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block Popular_Anime %}
+<img src="https://cdn.myanimelist.net/images/anime/1429/95946.jpg" alt="">
+{% endblock Popular_Anime %}
+
+{% block Event %}
+    {% for event in Content_Event %}
+        <h3>{{event.content_title}}</h3>
+        <p>{{event.content_body}}</p>
+    {% endfor %}
+{% endblock Event %}
+
+{% block News %}
+    {% for news in Content_News %}
+        <h3>{{news.content_title}}</h3>
+        <p>{{news.content_body}}</p>
+    {% endfor %}
+{% endblock News %}
+
+{% block Announcement %}
+    {% for ann in Content_Announ %}
+        <h3>{{ann.content_title}}</h3>
+        <p>{{ann.content_body}}</p>
+    {% endfor %}
+{% endblock Announcement %}

@@ -1,0 +1,4 @@
+-- Active: 1672449191149@@127.0.0.1@3306
+SHOW DATABASES;
+SELECT * FROM news_news;
+SELECT * FROM auth_user;

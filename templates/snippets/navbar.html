@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="wrapper">
+    <nav>
+        <div class="container-flex">
+            <div class="brand">
+                <a href="/"><img class="nav-official-logo" src="{% static 'img/myanimelist_logo.png' %}" alt="my-animelist-logo"></a>
+            </div> <!-- brand -->
+            <div class="burger">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div> <!--div burger-->
+            <div class="bg-sidebar"></div>
+            <ul class="sidebar">
+                {% for link,page in site_nav %}
+                <li><a href="{{link}}">{{page}}</a></li>
+                {% endfor %}
+            </ul>
+        </div> <!-- div container-flex -->
+    </nav> <!-- tag nav -->
+</div> <!-- div wrapper -->

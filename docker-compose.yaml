@@ -1,0 +1,60 @@
+version: '3.8'
+
+# services:
+#   mysql-db:
+#     build:
+#       context: .
+#       dockerfile: Docker/mysql/Dockerfile
+#     volumes:
+#       - mysql-data:/var/lib/mysql
+#     restart: unless-stopped
+#     env_file:
+#       - myanimelist/.env
+#     ports:
+#       - 3307:3306
+
+#   backend:
+#     build:
+#       context: .
+#       dockerfile: Docker/django/Dockerfile
+#     env_file:
+#       - myanimelist/.env
+#     restart: always
+#     volumes:
+#       - .:/app/
+#     depends_on:
+#       - mysql-db
+#     working_dir: "/app/myanimelist"
+#     expose:
+#       - 8000
+#     ports:
+#       - "8000:8000/tcp"
+#     command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+# volumes:
+#   mysql-data:
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/myanimelist # nama folder di dalam container
+    expose:
+      - 8000
+    ports:
+      - 8000:8000
+    image: myanimelist:django
+    container_name: myanimelist_apps
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+  
+  db:
+    image: mysql:latest
+    container_name: myanimelist_db
+    ports:
+      - "3307:3306/tcp"
+    volumes:
+      - .backup/mysql:/var/lib/mysql # mount folder
+    env_file:
+      - myanimelist/.env

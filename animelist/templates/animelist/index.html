@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<main>
+    {% block Main_Content %}
+
+    <section style="padding-bottom: 300px;">
+        <h1 style="font-size: 20pt; text-align: center;">Temukan Anime Favoritmu</h1>
+        {% block Popular_Anime %}
+            <div class="input-group" style="margin-top: 25px; margin-left: 35%; margin-bottom: 30px;">
+                <input id="search-input" type="text" class="form-control" placeholder="Cari judul..." style="height: 30px; width: 300px;">
+                <button class="btn btn-outline-secondary" type="button" id="search-button" style="font-size: 12pt; height: 30px; width: 90px;">Search</button>
+            </div>
+        {% endblock Popular_Anime %}
+    </section>
+
+    {% endblock Main_Content %}
+</main>
