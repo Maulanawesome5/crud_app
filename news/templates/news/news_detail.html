@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block Main_Content %}
+<style>
+    article {
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 30px;
+        text-align: justify;
+    }
+    .container {
+        padding-bottom: 20px;
+    }
+    h3{
+        padding-bottom: 30px;
+        font-size: 20pt;
+    }
+</style>
+<section>
+    <article>
+        <h3>{{Contents.content_title}}</h3>
+        <div class="container">
+            <p>Ditulis pada : <em>{{Contents.post_date}}</em></p>
+            <p>Penulis : <strong>{{Contents.writers}}</strong></p>
+        </div>
+        <p>{{Contents.content_body}}</p>
+    </article>
+</section>
+
+{% endblock Main_Content %}

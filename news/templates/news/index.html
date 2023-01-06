@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block Main_Content %}
+<style>
+    a {
+        color: #252525;
+        text-decoration: none;
+    }
+    article {
+        background-color: rgb(230, 230, 230);
+        margin-bottom: 20px;
+        padding-bottom: 30px;
+    }
+    footer p {
+        background-color: #252525;
+        margin: 0px 0px;
+    }
+    h1 {
+        color: #252525;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    h2 {
+        margin-bottom: 15px;
+    }
+    h3, p {
+        /* background-color: rgb(209, 209, 209); */
+        margin-left: 20px;
+        margin-right: 30px;
+    }
+    main {
+        padding-bottom: 20%;
+    }
+    p {
+        margin-bottom: 25px;
+        margin-top: 10px;
+    }
+    section {
+        /* background-color: chartreuse; */
+        margin-bottom: 30px;
+        padding-left: 8vw;
+        padding-right: 8vw;
+        text-align: justify;
+    }
+</style>
+<section class="text-information">
+
+    <article id="announcement">
+        <h2>Pengumuman</h2>
+        {% block Announcement %}
+            {% for ann in Content_Announ %}
+            <a href="/news/{{ann.slug}}">
+                <h3>{{ann.content_title}}</h3>
+            </a>
+            <p>{{ann.content_body}}</p>
+            {% endfor %}
+        {% endblock Announcement %}
+    </article>
+
+    <article id="info_event">
+        <h2>Incoming Event</h2>
+        {% block Event %}
+            {% for event in Content_Event %}
+                <a href="/news/{{event.slug}}">
+                    <h3>{{event.content_title}}</h3>
+                </a>
+                <p>
+                    {{event.content_body | truncatechars:300 }}
+                    <a href="/news/{{event.slug}}">Selengkapnya</a>
+                </p>
+            {% endfor %}
+        {% endblock Event %}
+    </article>
+
+    <article id="info_news">
+        <h2>Hot News</h2>
+        {% block News %}
+            {% for news in Content_News %}
+                <a href="/news/{{news.slug}}">
+                    <h3>{{news.content_title}}</h3>
+                </a>
+                <p>
+                    {{news.content_body | truncatechars:300 }}
+                    <a href="/news/{{news.slug}}">Selengkapnya</a>
+                </p>
+            {% endfor %}
+        {% endblock News %}
+    </article>
+
+</section>
+{% endblock Main_Content %}

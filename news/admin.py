@@ -3,4 +3,8 @@ from django.contrib import admin
 # Register your models here.
 from .models import News
 
-admin.site.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    readonly_fields = ["slug", "post_date",]
+
+
+admin.site.register(News, NewsAdmin)

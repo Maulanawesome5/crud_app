@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block Popular_Anime %}
 <img src="https://cdn.myanimelist.net/images/anime/1429/95946.jpg" alt="">
@@ -7,20 +8,29 @@
 {% block Event %}
     {% for event in Content_Event %}
         <h3>{{event.content_title}}</h3>
-        <p>{{event.content_body}}</p>
+        <p>
+            {{event.content_body | truncatechars:300}}
+            <a href="#">Selengkapnya</a>
+        </p>
     {% endfor %}
 {% endblock Event %}
 
 {% block News %}
     {% for news in Content_News %}
         <h3>{{news.content_title}}</h3>
-        <p>{{news.content_body}}</p>
+        <p>
+            {{news.content_body | truncatechars:300}}
+            <a href="#">Selengkapnya</a>
+        </p>
     {% endfor %}
 {% endblock News %}
 
 {% block Announcement %}
     {% for ann in Content_Announ %}
         <h3>{{ann.content_title}}</h3>
-        <p>{{ann.content_body}}</p>
+        <p>
+            {{ann.content_body}}
+            <a href="#">Selengkapnya</a>
+        </p>
     {% endfor %}
 {% endblock Announcement %}
