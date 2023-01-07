@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block Main_Content %}
+<style>
+    .container {
+        margin-left: 20%;
+        margin-right: auto;
+    }
+    .container img {
+        width: 80%;
+    }
+</style>
+<section>
+    <div class="container">
+        <img src="{% static 'img/under_construction.png' %}" alt="under_construction">
+    </div>
+</section>
+{% endblock Main_Content %}

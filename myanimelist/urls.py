@@ -22,8 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     # path('', include("api.urls")),
-    path('animelist/', include('animelist.urls'), name="animelist"),
-    path('community/', include('community.urls'), name="community"),
-    path('news/', include('news.urls'), name="news"),
-    path('user_profile/', include('user_profile.urls'), name="user_profile"),
+    path('animelist/', include('animelist.urls')),
+    path('community/', include('community.urls')),
+    path('news/', include('news.urls')),
+    path('user_profile/', include('user_profile.urls')),
 ]

@@ -2,7 +2,7 @@
     "editor.minimap.autohide": true,
     "python.defaultInterpreterPath": ".\\Env\\Scripts\\python",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    // "workbench.colorTheme": "Dracula",
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Dracula",
+    // "workbench.colorTheme": "Default Light+",
     "workbench.iconTheme": "vscode-icons",
 }

@@ -9,7 +9,7 @@
     {% for event in Content_Event %}
         <h3>{{event.content_title}}</h3>
         <p>
-            {{event.content_body | truncatechars:300}}
+            {{event.content_body | truncatechars:350}}
             <a href="#">Selengkapnya</a>
         </p>
     {% endfor %}
@@ -28,9 +28,6 @@
 {% block Announcement %}
     {% for ann in Content_Announ %}
         <h3>{{ann.content_title}}</h3>
-        <p>
-            {{ann.content_body}}
-            <a href="#">Selengkapnya</a>
-        </p>
+        <p>{{ann.content_body}}</p>
     {% endfor %}
 {% endblock Announcement %}

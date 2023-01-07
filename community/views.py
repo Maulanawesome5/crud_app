@@ -13,4 +13,4 @@ def index(request):
         ],
         "website" : "My Anime List",
     }
-    return render(request, "index.html", context)
+    return render(request, "community/index.html", context)
