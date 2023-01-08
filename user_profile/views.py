@@ -9,6 +9,7 @@ def index(request):
         "creator" : "Maulana Aji W.",
         "page_name" : "User Profile",
         "register_forms" : register_forms,
+        "site_name" : "My Anime List Indonesia",
         "site_nav" : [
             ["/", "Home"],
             ["/animelist", "Explorer"],
