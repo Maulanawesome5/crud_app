@@ -18,5 +18,5 @@ def index(request):
         ],
         "website" : "My Anime List",
     }
-    print(request.POST)
+    # print(request.POST)
     return render(request, "user_profile/index.html", context)
