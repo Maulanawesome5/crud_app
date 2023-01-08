@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block Main_Content %}
+<style>
+    section {
+        background-color: chartreuse;
+        padding-bottom: 300px;
+    }
+</style>
+<section>
+    <h1>Coba Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <table> 
+
+            {{register_forms.as_table}}
+
+            <tr>
+                <td>
+                    <button type="submit">Register</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</section>
+{% endblock Main_Content %}
+
+<!-- isi FORM di dalam Django
+    <tr>
+        <th>
+            <label for="id_firstname">Firstname:</label>
+        </th>
+        <td>
+            <input type="text" name="firstname" maxlength="100" required id="id_firstname">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label for="id_lastname">Lastname:</label>
+        </th>
+        <td>
+            <input type="text" name="lastname" maxlength="100" required id="id_lastname">
+        </td>
+    </tr> 
+-->
